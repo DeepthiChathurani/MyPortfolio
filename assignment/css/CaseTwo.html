@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Case Two</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="../../assest/font-awesome/fontawesome-free-6.4.0-web/css/all.css">
+    <link rel="stylesheet" href="../../assest/font-awesome/fontawesome-free-6.4.0-web/css/brands.css">
+    <link rel="stylesheet" href="../../assest/font-awesome/fontawesome-free-6.4.0-web/css/fontawesome.css">
+    <link rel="stylesheet" href="../../assest/font-awesome/fontawesome-free-6.4.0-web/css/regular.css">
+
+
+    <style>
+        header{
+           background: white;
+           border: 1px solid black;
+            position: relative;
+        }
+       header>img{
+
+       }
+       header>nav>ul {
+           float: right;
+           list-style-type: none;
+           margin: 0;
+           padding: 0;
+           padding-top: 15px;
+           text-decoration: none;
+
+       }
+        header>nav>ul>li{
+            display: inline;
+            margin-right: 20px;
+        }
+        header>nav>ul>li>i{
+            color: red;
+            font-size: 25px;
+            margin-right: 5px;
+        }
+        body>main{
+            position: relative;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+       body>main>nav{
+           width: 200px;
+           position: absolute;
+           top: 0;
+           bottom: 0;
+           background: blue;
+           border: 1px solid blue;
+           color: white;
+       }
+       body>main>nav>ul {
+           float: left;
+           list-style-type: none;
+           margin: 20px;
+           padding: 20px;
+           padding-top: 25px;
+           text-decoration: none;
+           color: white;
+       }
+        body>main>nav>ul>li{
+            padding-top: 20px;
+            display:block;
+            margin-right: 20px;
+
+        }
+       main>section{
+           margin-left: 200px;
+           padding: 10px;
+       }
+
+       main>section>section{
+           height: 180px;
+           position: relative;
+       }
+       main>section>section>div{
+           height: 100%;
+           width: calc(100%/3);
+           position: absolute;
+       }
+       main>section>section>div:nth-child(1){
+           left: 0;
+       }
+        main>section>section>div:nth-child(2){
+            left: calc(100%/3);
+        }
+        main>section>section>div:nth-child(3){
+            right: 0;
+        }
+        footer{
+           height:65px;
+           background:  gray;
+       }
+       footer>p{
+           font-weight:bold ;
+           text-align: center;
+           padding-top: 10px;
+           color: white;
+       }
+
+    </style>
+
+
+</head>
+<body>
+<header>
+    <nav class="navBar">
+        <img src="/assest/img/ijse.png" height="100px" width="200">
+        <ul>
+            <li><i class="fa-solid fa-house"></i><a href="#">Home</a></li>
+            <li><i class="fa-brands fa-servicestack"></i><a href="#">Services></a></li>
+            <li><i class="fa-regular fa-id-badge"></i><a href="#">Contact</a></li>
+            <li><i class="fa-regular fa-address-card"></i><a href="#">About Us</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+
+    <nav> <ul>
+        <li><i class="fa-solid fa-house"></i><a href="#">Home</a></li>
+        <li><i class="fa-brands fa-servicestack"></i><a href="#">Services</a></li>
+        <li><i class="fa-regular fa-id-badge"></i><a href="#">Contact</a></li>
+        <li><i class="fa-regular fa-address-card"></i><a href="#">About Us</a></li>
+    </ul>
+    </nav>
+
+    <section>
+        <section>
+            <div><img src="/assest/img/cartoon.gif"></div>
+            <div><img src="/assest/img/cartoon.gif"></div>
+            <div><img src="/assest/img/cartoon.gif"></div>
+        </section>
+
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci architecto asperiores, at consequuntur
+            doloribus esse facere harum libero maxime modi nulla optio qui quis recusandae rerum ullam? At, fugit!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci architecto asperiores, at consequuntur
+            doloribus esse facere harum libero maxime modi nulla optio qui quis recusandae rerum ullam? At, fugit!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci architecto asperiores, at consequuntur
+            doloribus esse facere harum libero maxime modi nulla optio qui quis recusandae rerum ullam? At, fugit!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci architecto asperiores, at consequuntur
+            doloribus esse facere harum libero maxime modi nulla optio qui quis recusandae rerum ullam? At, fugit!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci architecto asperiores, at consequuntur
+            doloribus esse facere harum libero maxime modi nulla optio qui quis recusandae rerum ullam? At, fugit!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci architecto asperiores, at consequuntur
+            doloribus esse facere harum libero maxime modi nulla optio qui quis recusandae rerum ullam? At, fugit!</p>
+    </section>
+</main>
+<footer>
+    <p> Developed By IJSE</p>
+</footer>
+</body>
+</html>
