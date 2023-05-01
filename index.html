@@ -51,6 +51,9 @@
             display: inline;
             margin-right: 20px;
         }
+        header>nav>ul>li>a:hover{
+            color: red;
+        }
         body>main{
             position: relative;
             margin-top: 10px;
@@ -78,8 +81,8 @@
             margin-left: 10px;
         }
         main>section:nth-child(1)>div:nth-child(1)>div{
-            width: 35vw;
-            height: 20vh;
+            width: 50vw;
+            height: 25vh;
             border: black;
             background: yellow;
             position: absolute;
@@ -87,28 +90,23 @@
             right: 0;
             top: 0;
             bottom: 0;
-            margin-left: 700px;
+            margin-left: 550px;
             margin-top: 180px;
             border-top-right-radius: 20px;
             border-bottom-right-radius: 80px;
             border-top-left-radius: 20px;
             border-bottom-left-radius: 20px;
         }
-        main>section:nth-child(1)>div:nth-child(1)>div>p:nth-child(1){
-            font-size: 40px;
+        main>section:nth-child(1)>div:nth-child(1)>div>h1{
+            font-size: 50px;
             margin-left: 50px;
             margin-top: 20px;
         }
-        main>section:nth-child(1)>div:nth-child(1)>div>p:nth-child(2){
-            font-size: 20px;
-            margin-left: 190px;
-            margin-top: 20px;
+        main>section:nth-child(1)>div:nth-child(1)>div>h1>samp{
+            color: blue;
         }
+
         main>section:nth-child(1)>div:nth-child(2){
-            width: 45vw;
-            height: 20vh;
-            border: 1px solid black;
-            background: burlywood;
             position: absolute;
             left: 0;
             right: 0;
@@ -118,9 +116,16 @@
             margin-top: 350px;
         }
         main>section:nth-child(1)>div:nth-child(2)>p{
-            font-size: 20px;
+            font-size: 30px;
             margin-left: 20px;
             margin-top: 40px;
+        }
+        main>section:nth-child(1)>div:nth-child(2)>p>samp{
+            font-size: 40px;
+            color: darkred;
+        }
+        main>section:nth-child(1)>aside>div:nth-child(1){
+
         }
         main>section:nth-child(2)>div{
             width: 1200px;
@@ -196,6 +201,7 @@
             position: relative;
             width:1200px ;
             height: 340px;
+            margin-top: 10px;
             border: 1px solid black;
         }
 
@@ -245,6 +251,24 @@
             background-size: cover;
             background-position: center;
         }
+
+        footer{
+            margin-top: 50px;
+           background: olivedrab;
+        }
+        footer>article{
+            margin-top: 20px;
+            margin-left: 40px;
+        }
+        footer>nav>ul{
+            margin-top: 20px;
+            margin-left: 100px;
+        }
+        footer>nav>ul>li:nth-child(4){
+            right: 0;
+            bottom: 0;
+        }
+
     </style>
 </head>
 <body>
@@ -268,35 +292,37 @@
     <div>
         <img src="assest/img/1.png" alt="This is a gift Image for Robot" width="200">
         <div>
-        <p> Hi, I'm Deepthi </p>
-        <p> software engineering</p>
+        <h1> Hi,
+            <br>I'm Deepthi  <samp>Chathurani</samp></h1>
         </div>
     </div>
     <div>
-        <p>
-            I am 23 years old. I am from Udugama. I am following <b>GDSE</b> in IJSE, Galle.
+        <p>This is my Official portfolio website to show all Details.
+            <br>I am 23 years old. I am from Udugama. I am following <samp>GDSE</samp> in IJSE ,
+            <br>Galle.
         </p>
     </div>
     <aside>
+  <div>
         <img usemap="#fbMap" src="assest/img/fb.png" alt="This is a gift Image for Robot"width="30" >
-    </aside>
+
     <map name="fbMap">
         <area shape="circle" coords="10,10,150" href="https://www.fb.com/Deepthi Kokmaduuwa">
     </map>
-
-    <aside>
+  </div>
+        <div>
         <img usemap="#whatsappMap" src="assest/img/whatsapp.png" alt="This is a gift Image for Robot"width="30" >
-    </aside>
     <map name="whatsappMap">
         <area shape="circle" coords="10,10,150" href="https://www.whatsapp.com/94762523925">
     </map>
-
-    <aside>
+        </div>
+        <div>
         <img usemap="#linkeinMap" src="assest/img/linkein.png" alt="This is a gift Image for Robot"width="30" >
-    </aside>
     <map name="linkeinMap">
         <area shape="circle" coords="10,10,150" href="https://www.linkedin.com/in/deepthi-chathurani-8a4741264/">
     </map>
+        </div>
+    </aside>
 </section>
 <!--2-->
     <section>
@@ -448,21 +474,19 @@
                     <img src="assest/img/user.png" alt="This is a gift Image for Robot" width="50" >
                     Deepthi Chathurani
                     </li>
-                    <br>
                     <li>
                         <img src="assest/img/linkein.png" alt="This is a gift Image for Robot" width="40" >
                         <a href="https://www.linkedin.com/in/deepthi-chathurani-8a4741264/">
                             deepthi-chathurani-8a4741264
                         </a>
                     </li>
-                    <br>
                     <li>
                         <img src="assest/img/fb.png" alt="This is a gift Image for Robot" width="30" >
                         <a href="https://www.fb.com/Deepthi Kokmaduuwa">
                             Deepthi Kokmaduuwa
                         </a>
                     </li>
-                    <br>
+
                     <li>
                         <img src="assest/img/github.png" alt="This is a gift Image for Robot" width="40" >
                         <a href="https://github.com/DeepthiChathurani">
