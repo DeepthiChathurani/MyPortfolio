@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <link rel="stylesheet" href="assets/css/normalize.css">
+
+    <style>
+        section{
+            width: 150px;
+            height: 100px;
+            background: chartreuse;
+            position: relative;
+            left: 0;
+            animation:Keyframe;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-direction: inherit;
+            animation-direction: alternate;
+            animation-delay: 1s;
+
+        }
+
+        @keyframes Keyframe {
+            0%{
+                transform: rotate(-360deg);
+                width: 150px;
+                height: 100px;
+                border-radius: 10px;
+                background: blue;
+            }
+            25%{
+                width: 150px;
+                height: 100px;
+                border-radius: 10px;
+                background: yellow;
+                left: 300px;
+                top: 0;
+
+            }
+
+            50%{
+                transform: rotate(360deg);
+                width: 150px;
+                height: 100px;
+                border-radius: 10px;
+                background: red;
+                left: 300px;
+                top: 200px;
+
+            }
+            75%{
+                width: 150px;
+                height: 100px;
+                border-radius: 10px;
+                background: deeppink;
+                left: 0;
+                top: 200px;
+            }
+            100%{
+                width: 150px;
+                height: 100px;
+                border-radius: 10px;
+                background: orangered;
+                top: 0;
+                left: 0;
+            }
+
+
+        }
+
+
+
+    </style>
+
+</head>
+
+<body>
+
+<section>
+    <div></div>
+</section>
+</body>
+</html>
