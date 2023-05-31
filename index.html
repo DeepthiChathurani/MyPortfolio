@@ -21,8 +21,11 @@
 
 
     <style>
+        *{
+            overflow-y: hidden;
+        }
         header{
-            background: white;
+            background: #3c2f5f;
             border: 1px solid black;
             position: relative;
             z-index: 3;
@@ -33,8 +36,11 @@
             width: 100%;
         }
         header>h2{
-            position: relative;
+            color: white;
+            position: absolute;
             display: inline;
+            margin-left:2px;
+            padding-top: 10px;
         }
         header>nav>ul {
             position: absolute;
@@ -46,6 +52,7 @@
             padding: 0;
             padding-top: 15px;
             text-decoration: none;
+            color: white;
 
         }
         header>nav>ul>li{
@@ -53,7 +60,7 @@
             margin-right: 20px;
         }
         header>nav>ul>li>a:hover{
-            color: red;
+            color: #0ecfe8;
         }
         body>main{
             position: relative;
@@ -70,8 +77,6 @@
             padding: 10px;
         }
         main>section:nth-child(1){
-            /*width: 70%;*/
-            /*height: 100%;*/
             background-color: white;
         }
         main>section:nth-child(1)>div>img{
@@ -467,8 +472,8 @@
 </head>
 <body>
 <header>
-    <nav class="navBar">
         <h2>Home</h2>
+    <nav class="navBar">
         <ul>
             <li><a>Education</a></li>
             <li><a>Skills</a></li>

@@ -2,147 +2,106 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Animation Case 6</title>
     <meta name="viewport" content="width=device-width initial-scale=1">
     <link rel="stylesheet" href="assets/css/normalize.css">
-    <title>Case Six</title>
-
     <style>
-        *{
-            margin: 0;
-            padding: 0;
+        body{
+            overflow: hidden;
         }
-
-        .carAnimation
-        {
+        main {
+            background: url("/assignment/transitions/img/sky.png");
+            width: 100vw;
             height: 100vh;
-            width: 100%;
-            background-image: url("img/sky.png");
             background-size: cover;
-            background-position: center;
-            position: relative;
-            overflow-x: hidden;
         }
 
-        .highway
-        {
-            height: 200px;
-            width: 500%;
+        main > #city {
+            height: 31vh;
+            width: 400vw;
+            background: url("/assignment/transitions/img/sity.png");
+            position: absolute;
+            bottom: 25vh;
+        }
+
+        main > #road {
+            height: 25vh;
+            background: url("/assignment/transitions/img/road.png");
+            position: absolute;
+            width: 400vw;
             bottom: 0;
-            left: 0;
-            right: 0;
-            display: block;
-            background-image: url("img/road.png");
-            position: absolute;
-            z-index: 1;
-            animation: highway 5s linear infinite;
+        }
+        #road,#city{
+            animation-name:moveCityAndRoad ;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
         }
 
-        @keyframes highway {
-            100%{
-                transform: translateX(-3400px);
-            }
-
-        }
-
-        .city
-        {
-            left: 0;
-            right: 0;
-            height: 250px;
-            width: 500%;
-            background-image: url("img/sity.png");
-            position: absolute;
-            bottom: 200px;
-            display: block;
-            z-index: 1;
-            background-repeat: repeat-x;
-            animation: city 20s linear infinite;
-        }
-
-        @keyframes city {
-            100%{
-                transform: translateX(-1400px);
-            }
-        }
-
-        .car
-        {
+        main > #car {
             width: 400px;
-            left: 50%;
-            bottom: 100px;
-            transform: translateX(-50%);
+            height: 150px;
             position: absolute;
+            bottom: 20%;
+            left: 0;
+            right: 0;
+            margin: auto;
             z-index: 2;
+            background: url("/assignment/transitions/img/car .png");
+            background-size: cover;
+            background-repeat: no-repeat;
         }
 
-        .car img
-        {
-            width: 100%;
-            animation: car 1s linear infinite;
-        }
-
-        @keyframes car {
-            100%{
-                transform: translateY(-1px);
-            }
-            50%{
-                transform: translateY(1px);
-            }
-            0%{
-                transform: translateY(-1px);
-            }
-        }
-
-        .wheel
-        {
-            left: 50%;
-            bottom: 178px;
-            transform: translateX(-50%);
+        #leftWheel, #rightWheel {
+            width: 70px;
+            height: 70px;
+            background: url("/assignment/transitions/img/wheel.png");
+            background-size: cover;
             position: absolute;
-            z-index: 2;
+            animation-name:wheels ;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
         }
 
-        .wheel img{
-            width: 72px;
-            height: 72px;
-            animation: wheel 1s linear infinite;
+        #rightWheel {
+            right: 48px;
+            bottom: -10px;
+
         }
 
-        .back-wheel
-        {
-            left: -165px;
-            position: absolute;
+        #leftWheel {
+            bottom: -10px;
+            left: 35px;
         }
 
-        .front-wheel
-        {
-            left: 80px;
-            position: absolute;
-        }
-
-        @keyframes wheel {
-            100%{
-                transform: rotate(360deg);
+        @keyframes wheels {
+            from {
+                transform: rotate(0deg);
             }
-
+            to {
+                transform: rotate(-360deg);
+            }
         }
-
+        @keyframes moveCityAndRoad {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-75%);
+            }
+        }
     </style>
-
 </head>
 <body>
-
-<div class="carAnimation">
-    <div class="highway"></div>
-    <div class="city"></div>
-    <div class="car">
-        <img src="img/car.png" alt="">
-    </div>
-    <div class="wheel">
-        <img src="img/wheel.png" alt="" class="back-wheel">
-        <img src="img/wheel.png" alt="" class="front-wheel">
-    </div>
-</div>
-
+<main>
+    <div id="city"></div>
+    <section id="car">
+        <div id="carBody"></div>
+        <div id="leftWheel"></div>
+        <div id="rightWheel"></div>
+    </section>
+    <div id="road"></div>
+</main>
 </body>
 </html>
