@@ -11,93 +11,98 @@
     <link rel="stylesheet" href="../../../assest/css/bootstrap-grid.css">
     <link rel="stylesheet" href="../../../assest/css/styles.css">
 
-  <style>
-      body{
-          width: 100%;
-          height:100%;
-          background-color: #222231;
-          overflow: hidden;
-          text-align: center;
-      }
-      body>h2{
-          margin-top: 80px;
-          font-size: 25px;
-          color: white;
-      }
+    <style>
+        body {
+            width: 100%;
+            height: 100%;
+            background-color: #222231;
+            overflow: hidden;
+            text-align: center;
+        }
 
-     section{
-         width: 900px;
-         height: 200px;
-         /*border: red solid 2px;*/
-          position: absolute;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          top: 0;
-          margin: auto;
-          display: flex;
-          align-items: center;
+        body > h2 {
+            margin-top: 80px;
+            font-size: 25px;
+            color: white;
+        }
 
-      }
-   section>div{
-          flex-grow: 1;
-          height: 50px;
-          border-radius: 20px;
-          margin-left: 10px;
+        section {
+            width: 900px;
+            height: 200px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            margin: auto;
+            display: flex;
+            align-items: center;
 
-      }
-      section>div:nth-child(1){
-          margin-right: 50px;
-          align-self: start;
-      }
-      section>div:nth-child(6){
-          margin-left: 50px;
-          align-self: end;
+        }
 
-      }
-      .line1{
-          width: 900px;
-          height: 4px;
-          background-color: #343a40;
-          margin-top: 165px;
-          margin-left: 240px;
-      }
-      .line2{
-          width: 900px;
-          height: 4px;
-          background-color: #343a40;
-          margin-top: 70px;
-          margin-left: 240px;
-      }
+        section > div {
+            flex-grow: 1;
+            height: 50px;
+            border-radius: 10px;
+            margin-left: 10px;
 
-  </style>
+        }
+
+        section > div:nth-child(1) {
+            margin-right: 50px;
+            align-self: start;
+        }
+
+        section > div:nth-child(6) {
+            margin-left: 50px;
+            align-self: end;
+
+        }
+
+        .line1 {
+            width: 900px;
+            height: 4px;
+            background-color: #343a40;
+            margin-top: 165px;
+            margin-left: 240px;
+        }
+
+        .line2 {
+            width: 900px;
+            height: 4px;
+            background-color: #343a40;
+            margin-top: 70px;
+            margin-left: 240px;
+        }
+
+    </style>
 </head>
 <body>
 <h2>Java Script Queue</h2>
 <div class="line1"></div>
 <div class="line2"></div>
-<section >
-    <div ></div>
-    <div ></div>
-    <div ></div>
-    <div ></div>
-    <div ></div>
-    <div ></div>
+<section>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
 
-    </section>
+</section>
 <script>
-    let colors=["red","green","blue","yellow","deeppink","purple"];
+    let colors = ["red", "green", "blue", "yellow", "deeppink", "purple"];
 
-  setInterval(function (){
-      let array=document.querySelector("section").children;
+    setInterval(function () {
+        let array = document.querySelector("section").children;
 
-      for (let i = 0; i < array.length; i++) { // for loop
-          console.log(array[i]);
-          array[i].style.background=colors[i];
-      }
-      let last=colors.pop();
-      colors.unshift(last);
-  },600);
+        for (let i = 0; i < array.length; i++) { // for loop
+            console.log(array[i]);
+            array[i].style.background = colors[i];
+        }
+        let last = colors.pop();
+        colors.unshift(last);
+    }, 600);
 
 
 </script>
