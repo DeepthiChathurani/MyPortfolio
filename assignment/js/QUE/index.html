@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java Script Queue</title>
+    <link rel="stylesheet" href="../../../assest/stylesheet.css">
+    <script src="../../../assest/js/bootstrap.bundle.js"></script>
+    <script src="../../../assest/js/bootstrap.esm.js"></script>
+    <script src="../../../assest/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../../../assest/css/bootstrap.css">
+    <link rel="stylesheet" href="../../../assest/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="../../../assest/css/styles.css">
+
+  <style>
+      body{
+          width:100%;
+          height: 100%;
+          background-color: black;
+          overflow: hidden;
+      }
+      #title{
+          width: 100%;
+          height: 100%;
+          margin-top: 80px;
+          text-align: center;
+      }
+      #title>div>h2{
+          font-size: 25px;
+          color: white;
+      }
+      #div{
+          width: 900px;
+          height: 200px;
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          top: 0;
+          margin: auto;
+          display: flex;
+          align-items: center;
+          background-color: black;
+
+      }
+      #div>div{
+          flex-grow: 1;
+          height: 50px;
+          border-radius: 20px;
+          margin-left: 15px;
+
+      }
+      #div>div:nth-child(1){
+          margin-left: 20px;
+          align-self: start;
+      }
+      #div>div:nth-child(6){
+          margin-left: 20px;
+          align-self: end;
+
+      }
+
+  </style>
+</head>
+<body>
+<section id="title">
+    <div>
+        <h2>Java Script Queue</h2>
+    </div>
+</section>
+<section id="div">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    </section>
+<script>
+    let colors=["red","green","blue","yellow","deeppink","purple"];
+
+  setInterval(function (){
+      let array=document.querySelector("#div").children;
+
+      for (let i = 0; i < array.length; i++) { // for loop
+          console.log(array[i]);
+          array[i].style.background=colors[i];
+      }
+      let last=colors.pop();
+      colors.unshift(last);
+  },600);
+
+
+</script>
+</body>
+</html>
