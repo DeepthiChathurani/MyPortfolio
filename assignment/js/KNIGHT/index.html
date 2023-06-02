@@ -32,10 +32,10 @@
        section>div{
            flex-grow: 1;
            height: 50px;
-           border-radius: 5px;
+
        }
         .line1 {
-            width: 1100px;
+            width: 1050px;
             height: 4px;
             background-color: #343a40;
             margin-top: 165px;
@@ -43,7 +43,7 @@
         }
 
         .line2 {
-            width: 1100px;
+            width: 1050px;
             height: 4px;
             background-color: #343a40;
             margin-top: 70px;
@@ -64,5 +64,19 @@
     <div></div>
     <div></div>
 </section>
+<script>
+    let colors = ["brown","red", "green", "blue", "yellow", "deeppink", "purple"];
+    setInterval(function () {
+        let array = document.querySelector("section").children;
+
+        for (let i = 0; i < array.length; i++) { // for loop
+            console.log(array[i]);
+            array[i].style.background = colors[i];
+        }
+        let last = colors.pop();
+        colors.unshift(last);
+    }, 300);
+
+</script>
 </body>
 </html>
