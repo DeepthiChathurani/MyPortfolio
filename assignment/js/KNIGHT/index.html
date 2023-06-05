@@ -49,13 +49,13 @@
             margin-top: 70px;
             margin-left: 150px;
         }
-        .btn1{
+        #start{
             margin-top: 20px;
             width: 80px;
             height: 30px;
             background-color: blue;
         }
-        .btn2{
+        #stop{
             margin-top: 20px;
             width: 80px;
             height: 30px;
@@ -76,21 +76,32 @@
     <div></div>
     <div></div>
 </section>
-<button class="btn1"> start</button >
-<button class="btn2"> stop</button>
+<button id="start" type="button"> start</button >
+<button id="stop" type="button"> stop</button>
 <script>
-    let colors = ["brown","red", "green", "blue", "yellow", "deeppink", "purple"];
-    setInterval(function () {
-        let array = document.querySelector("section").children;
 
-        for (let i = 0; i < array.length; i++) { // for loop
-            console.log(array[i]);
-            array[i].style.background = colors[i];
+        let colors = ["brown", "red", "green", "blue", "yellow", "deeppink", "purple"];
+        setInterval(function () {
+            let array = document.querySelector("section").children;
+
+            for (let i = 0; i < array.length; i++) { // for loop
+                console.log(array[i]);
+                array[i].style.background = colors[i];
+            }
+            let last = colors.pop();
+            colors.unshift(last);
+        }, 300);
+
+        document.getElementById("start").addEventListener("click", startFunction);
+        document.getElementById("stop").addEventListener("click", stopFunction);
+        var timeValue = null;
+        function startFunction() {
+            timeValue = setInterval(function() {
+            }, 1000);
         }
-        let last = colors.pop();
-        colors.unshift(last);
-    }, 300);
-
+        function stopFunction() {
+            clearInterval(timeValue);
+        }
 </script>
 </body>
 </html>
