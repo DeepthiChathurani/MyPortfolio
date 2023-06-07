@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>KNIGHT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
 
     <style>
         body{
@@ -17,56 +19,79 @@
             font-size: 25px;
             color: #b21010;
         }
-       section{
-           width: 1050px;
-           height: 200px;
-           position: absolute;
-           left: 0;
-           right: 0;
-           top: 0;
-           bottom: 0;
-           margin: auto;
-           display: flex;
-           align-items: center;
-       }
-       section>div{
-           flex-grow: 1;
-           height: 50px;
 
-       }
+        section{
+            width: 1000px;
+            height: 400px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+        }
+        section>div{
+            height: 80px;
+            flex-grow: 1;
+            border: 1px solid #800e13;
+
+        }
+
+        .text{
+            left: 0;
+            right: 0;
+            margin-top: 200px;
+            text-align: center;
+            color: rosybrown;
+        }
+   #btn{
+            position: absolute;
+            left: 0;
+            right: 100px;
+            top: 300px;
+            bottom: 0;
+            margin: auto;
+            width: 58px;
+            height: 38px;
+
+        }
+        #btn1 {
+            position: absolute;
+            left: 100px;
+            right: 0;
+            top: 300px;
+            bottom: 0;
+            margin: auto;
+            width: 58px;
+            height: 38px;
+        }
         .line1 {
-            width: 1050px;
+            width: 1000px;
             height: 4px;
             background-color: #343a40;
-            margin-top: 95px;
-            margin-left: 150px;
+            margin-top: 75px;
+            margin-left: 175px;
         }
 
         .line2 {
-            width: 1050px;
+            width: 1000px;
             height: 4px;
             background-color: #343a40;
-            margin-top: 70px;
-            margin-left: 150px;
-        }
-        #start{
-            margin-top: 20px;
-            width: 80px;
-            height: 30px;
-            background-color: blue;
-        }
-        #stop{
-            margin-top: 20px;
-            width: 80px;
-            height: 30px;
-            background-color: blue;
+            margin-top:115px;
+            margin-left: 175px;
         }
     </style>
+
+
 </head>
 <body>
-<h2>JavaScript Knight Rider</h2>
+
+<h2 >JavaScript Knight Rider</h2>
 <div class="line1"></div>
 <div class="line2"></div>
+<div class="first"></div>
 <section>
     <div></div>
     <div></div>
@@ -76,33 +101,87 @@
     <div></div>
     <div></div>
 </section>
-<button id="start" type="button"> start</button >
-<button id="stop" type="button"> stop</button>
+<div class="senod"></div>
+<button  class="btn btn-danger" id="btn">Start</button>
+<button class="btn btn-primary" id="btn1">Stop</button>
+
+<audio id="audio" src="assets/audio/Knight.mp3"></audio>
+
+<script src="assest/js/jquery-3.7.0.min.js"></script>
 <script>
 
-        let colors = ['white', 'white', 'white', 'white', 'white', 'white', '#d3c5c5', '#be7474', '#cd4a4a', '#b83030', '#c52525', '#dc1e1e'];
-        setInterval(function () {
-            let array = document.querySelector("section").children;
+    let colors=["#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF",'#eed2d2',"#D29F9F","#B96868","#FF0000"];
 
-            for (let i = 0; i < array.length; i++) {
-                console.log(array[i]);
-                array[i].style.background = colors[i];
+    let divArray=document.querySelector("section").children;
+    let audios=document.getElementById("audio");
+    let out=0;
+    let res=true;
+    let stop;
+
+    $(document).ready(function (){
+        divArray.css("border", "none");
+    });
+
+
+
+    stop=setInterval(function (){
+        if (res){
+            for (let i = 0; i < divArray.length; i++) {
+                divArray[i].style.background=colors[i];
             }
-            let last = colors.pop();
+            let  last=colors.pop();
             colors.unshift(last);
-        }, 20);
+            out++;
 
-         document.getElementById("start").addEventListener("click", startFunction);
-         document.getElementById("stop").addEventListener("click", stopFunction);
-         var timeValue = null;
-         function startFunction() {
-             timeValue = setInterval(function() {
-             }, 1000);
-         }
-         function stopFunction() {
-             clearInterval(timeValue);
+            if (out==8){
+                res=false;
+            }
+        }if (res==false){
+            let last1=colors.shift();
+            colors.push(last1);
 
-         }
+            for (let i = 0; i < divArray.length; i++) {
+                divArray[i].style.background=colors[i];
+            }
+            out--;
+            if (out==1){
+                res=true;
+            }
+        }
+    },140);
+    $("#btn").on("click",function (){
+        audios.play();
+        clearInterval(stop); stop=setInterval(function (){
+            if (res){
+                for (let i = 0; i < divArray.length; i++) {
+                    divArray[i].style.background=colors[i];
+                }
+                let  last=colors.pop();
+                colors.unshift(last);
+                out++;
+
+                if (out==8){
+                    res=false;
+                }
+            }if (res==false){
+                let last1=colors.shift();
+                colors.push(last1);
+
+                for (let i = 0; i < divArray.length; i++) {
+                    divArray[i].style.background=colors[i];
+                }
+                out--;
+                if (out==1){
+                    res=true;
+                }
+            }
+        },140); });
+
+    $("#btn1").on("click",function (){
+        clearInterval(stop);
+        audios.pause();
+    });
+
 </script>
 </body>
 </html>

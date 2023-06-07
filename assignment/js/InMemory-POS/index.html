@@ -401,25 +401,52 @@
     //     /*tBody.appendChild(tr);*/
     //     document.getElementById("tblCustomer").appendChild(tr);
     // });
+    var customerDB =[];
     $("#btnCustomer").click(function () {
        let id = $("#txtCustomerID").val();
         let name = $("#txtCustomerName").val();
         let address = $("#txtCustomerAddress").val();
         let salary =$("#txtCustomerSalary").val();
+        // console.log(id,name,address,salary);
 
-        console.log(id,name,address,salary);
-        let tr =$("<tr></tr>");
-        let col1 =$("<td></td>").html(id);
-        let col2 =$("<td></td>").html(name);
-        let col3 =$("<td></td>").html(address);
-        let col4 =$("<td></td>").html(salary);
-        // col1.append(id);
-        // col2.append(name);
-        // col3.append(address);
-        // col4.append(salary);
+        var customerOb ={
+            id:this.id,
+            name:this.name,
+            address:this.address,
+            salary:this.salary
+        }
+        customerDB.push(customerOb);
 
-        tr.append(col1,col2,col3,col4);
-           $("#tblCustomer").append(tr);
+        // let tr =$("<tr></tr>");
+        // let col1 =$("<td></td>").html(id);
+        // let col2 =$("<td></td>").html(name);
+        // let col3 =$("<td></td>").html(address);
+        // let col4 =$("<td></td>").html(salary);
+        // // col1.append(id);
+        // // col2.append(name);
+        // // col3.append(address);
+        // // col4.append(salary);
+        //
+        // tr.append(col1,col2,col3,col4);
+        //    $("#tblCustomer").append(tr);
+    });
+    $("btnGetAll").click(function () {
+        for(let i=0; i<customerDB.length; i++) {
+            let id = customerDB[i][0];
+            let name = customerDB[i][1];
+            let address = customerDB[i][2];
+            let salary = customerDB[i][3];
+
+            let tr =$("<tr></tr>");
+            let col1 =$("<td></td>").html(id);
+            let col2 =$("<td></td>").html(name);
+            let col3 =$("<td></td>").html(address);
+            let col4 =$("<td></td>").html(salary);
+            tr.append(col1,col2,col3,col4);
+            $("#tblCustomer").append(tr);
+        }
+
+
     });
     document.getElementById("btnItem").addEventListener("click",function () {
         let code= document.getElementById("txtCode").value;
