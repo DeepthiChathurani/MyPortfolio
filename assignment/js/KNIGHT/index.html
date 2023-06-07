@@ -80,28 +80,29 @@
 <button id="stop" type="button"> stop</button>
 <script>
 
-        let colors = ["brown", "red", "green", "blue", "yellow", "deeppink", "purple"];
+        let colors = ['white', 'white', 'white', 'white', 'white', 'white', '#d3c5c5', '#be7474', '#cd4a4a', '#b83030', '#c52525', '#dc1e1e'];
         setInterval(function () {
             let array = document.querySelector("section").children;
 
-            for (let i = 0; i < array.length; i++) { // for loop
+            for (let i = 0; i < array.length; i++) {
                 console.log(array[i]);
                 array[i].style.background = colors[i];
             }
             let last = colors.pop();
             colors.unshift(last);
-        }, 300);
+        }, 20);
 
-        document.getElementById("start").addEventListener("click", startFunction);
-        document.getElementById("stop").addEventListener("click", stopFunction);
-        var timeValue = null;
-        function startFunction() {
-            timeValue = setInterval(function() {
-            }, 1000);
-        }
-        function stopFunction() {
-            clearInterval(timeValue);
-        }
+         document.getElementById("start").addEventListener("click", startFunction);
+         document.getElementById("stop").addEventListener("click", stopFunction);
+         var timeValue = null;
+         function startFunction() {
+             timeValue = setInterval(function() {
+             }, 1000);
+         }
+         function stopFunction() {
+             clearInterval(timeValue);
+
+         }
 </script>
 </body>
 </html>
