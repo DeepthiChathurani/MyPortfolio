@@ -4,16 +4,24 @@
     <meta charset="UTF-8">
     <title>Calculator</title>
     <style>
-        #cal{
-
+        #cal>img{
+            width: 100%;
+            height: 100%;
         }
         .calculator {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
             padding: 10px;
             border-radius: 1px;
             height: 380px;
             width: 500px;
             margin: auto;
             background-color: #3d3d3d;
+
             box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
         }
 
@@ -31,15 +39,21 @@
             background-color: #c73636;
             color: white;
         }
+        #result{
+            background-color: #343a40;
+            color: white;
+            width:98% ;
+            height: 90%;
+        }
         input[type=button] {
-            font-family: 'Orbitron', sans-serif;
+            width: 100%;
+            padding: 20px 40px;
             background-color: #c9c9c9;
             color: black;
-            border: solid black 0.5px;
-            width: 100%;
+            font-size: 24px;
+            font-weight: bold;
+            border: none;
             border-radius: 3px;
-            height: 95%;
-            outline: none;
         }
 
         input:active[type=button] {
@@ -51,7 +65,9 @@
     </style>
 </head>
 <body>
+
 <section id="cal">
+    <img src="img/backgroundImg.jpg">
     <table class="calculator" >
         <tr>
             <!-- clearScreen() function clears all the values -->
