@@ -13,7 +13,6 @@
     <script src="../../../assest/js/bootstrap.bundle.js"></script>
     <script src="../../../assest/js/bootstrap.esm.js"></script>
     <script src="../../../assest/js/bootstrap.js"></script>
-
 </head>
 <body>
 <header>
@@ -85,12 +84,12 @@
                         <th > Address</th>
                         <th >Salary</th>
                     </tr>
-<!--                    <tr>-->
-<!--                        <th>C001</th>-->
-<!--                        <th>Nimal</th>-->
-<!--                        <th>Galle</th>-->
-<!--                        <th>30000</th>-->
-<!--                    </tr>-->
+                    <!--                    <tr>-->
+                    <!--                        <th>C001</th>-->
+                    <!--                        <th>Nimal</th>-->
+                    <!--                        <th>Galle</th>-->
+                    <!--                        <th>30000</th>-->
+                    <!--                    </tr>-->
                     </thead>
                     <tbody id="tblCustomer">
 
@@ -108,33 +107,33 @@
             <div class="col-12 col-lg-4">
                 <h2>Item Form</h2>
             </div>
-                <div class="form-group">
-                    <label for="txtCode">Code</label>
-                    <input class="form-control" id="txtCode" required type="text">
-                    <span class="control-error" id="lblcode"></span>
-                </div>
-                <div class="form-group">
-                    <label for="txtItemName"> Name</label>
-                    <input class="form-control" id="txtItemName" type="text">
-                    <span class="control-error" id="lblitemname"></span>
-                </div>
-                <div class="form-group">
-                    <label for="txtPrice">Price</label>
-                    <input class="form-control" id="txtPrice" type="text">
-                    <span class="control-error" id="lblprice"></span>
-                </div>
-                <div class="form-group">
-                    <label for="txtQty">Qty</label>
-                    <input class="form-control" id="txtQty" type="text">
-                    <span class="control-error" id="lblqty></span>
+            <div class="form-group">
+                <label for="txtCode">Code</label>
+                <input class="form-control" id="txtCode" required type="text">
+                <span class="control-error" id="lblcode"></span>
             </div>
-                 <div class="items" >
-                    <button class="btnItem btn-primary" id="btnItem">Save</button>
-                    <button class="btnItem btn-success" id="btnItemUpdate">Update</button>
-                    <button class="btnItem btn-danger" id="btnItemDelete">Delete</button>
-                </div>
+            <div class="form-group">
+                <label for="txtItemName"> Name</label>
+                <input class="form-control" id="txtItemName" type="text">
+                <span class="control-error" id="lblitemname"></span>
+            </div>
+            <div class="form-group">
+                <label for="txtPrice">Price</label>
+                <input class="form-control" id="txtPrice" type="text">
+                <span class="control-error" id="lblprice"></span>
+            </div>
+            <div class="form-group">
+                <label for="txtQty">Qty</label>
+                <input class="form-control" id="txtQty" type="text">
+                <span class="control-error" id="lblqty></span>
+            </div>
+                 <div class="items">
+                <button class="btnItem btn-primary" id="btnItem">Save</button>
+                <button class="btnItem btn-success" id="btnItemUpdate">Update</button>
+                <button class="btnItem btn-danger" id="btnItemDelete">Delete</button>
 
-                </div>
+
+            </div>
 
             </div>
             <div class="col-12 col-lg-8 mt-3">
@@ -339,7 +338,6 @@
         </div>
     </main>
 </section>
-<script src="js/jquery-3.7.0.min.js"></script>
 <script>
     document.addEventListener("DOMContentLoaded",function () {
         document.getElementById("home").style.display='inline-block';
@@ -384,15 +382,19 @@
     //     let salary = document.getElementById("txtCustomerSalary").value;
     //     console.log(id,name,address,salary);
     //     // let tBody = document.getElementById("tblCustomer").value;
+    //
     //     let col1 =document.createElement("td");
     //     let col2 =document.createElement("td");
     //     let col3 =document.createElement("td");
     //     let col4 =document.createElement("td");
+    //
     //     col1.append(id);
     //     col2.append(name);
     //     col3.append(address);
     //     col4.append(salary);
+    //
     //     let tr =document.createElement("tr");
+    //
     //     tr.appendChild(col1);
     //     tr.appendChild(col2);
     //     tr.appendChild(col3);
@@ -400,36 +402,48 @@
     //
     //     /*tBody.appendChild(tr);*/
     //     document.getElementById("tblCustomer").appendChild(tr);
-    // });
-    var customerDB =[];
-    // $("#btnCustomer").click(function () {
-    //    let id = $("#txtCustomerID").val();
-    //     let name = $("#txtCustomerName").val();
-    //     let address = $("#txtCustomerAddress").val();
-    //     let salary =$("#txtCustomerSalary").val();
-    //     // console.log(id,name,address,salary);
     //
-    //     var customerOb ={
-    //         id:this.id,
-    //         name:this.name,
-    //         address:this.address,
-    //         salary:this.salary
-    //     }
-    //     customerDB.push(customerOb);
+    // });
+    var customerDB = [] ;
+    $("#btnCustomer").click(function () {
 
-        // let tr =$("<tr></tr>");
-        // let col1 =$("<td></td>").html(id);
-        // let col2 =$("<td></td>").html(name);
-        // let col3 =$("<td></td>").html(address);
-        // let col4 =$("<td></td>").html(salary);
-        // // col1.append(id);
-        // // col2.append(name);
-        // // col3.append(address);
-        // // col4.append(salary);
-        //
-        // tr.append(col1,col2,col3,col4);
-        //    $("#tblCustomer").append(tr);
-    //});
+        //get values of the text fields
+        let cusId = $("#txtCustomerID").val();
+        let cusName = $("#txtCustomerName").val();
+        let cusAddress = $("#txtCustomerAddress").val();
+        let cusSalary = $("#txtCustomerSalary").val();
+
+        let customerOb= {
+            id : cusId,
+            name : cusName,
+            address : cusAddress,
+            salary : cusSalary
+        }
+        customerDB.push(customerOb);
+    });
+    // $("#btnGetAll").click(function () {
+    //
+    //     //clear all tbody data before add
+    //     $("#tblCustomer").empty();
+    //
+    //     //get all customers
+    //     for (let i = 0; i < customerDB.length; i++) {
+    //         let id = customerDB[i].id;
+    //         let name = customerDB[i].name;
+    //         let address = customerDB[i].address;
+    //         let salary = customerDB[i].salary;
+    //
+    //         let row = `<tr>
+    //                  <td>${id}</td>
+    //                  <td>${name}</td>
+    //                  <td>${address}</td>
+    //                  <td>${salary}</td>
+    //                 </tr>`;
+    //
+    //         // //and then append the row to tableBody
+    //         $("#tblCustomer").append(row);
+    //     }
+    // });
     $("btnGetAll").click(function () {
         for(let i=0; i<customerDB.length; i++) {
             let id = customerDB[i][0];
