@@ -17,10 +17,11 @@
 </head>
 <body>
 <header>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary w-100" data-bs-theme="dark" >
+    <nav class="navbar navbar-expand-lg bg-body-tertiary w-100" data-bs-theme="dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">POS System</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="nav justify-content-end" id="navbarNavAltMarkup">
@@ -28,7 +29,7 @@
                     <a class="nav-link active" aria-current="page" href="#home" id="homepage">Home</a>
                     <a class="nav-link" href="#customer" id="customerPage">Customer</a>
                     <a class="nav-link" href="#item" id="itemPage">Item</a>
-                    <a class="nav-link "href="#order" id="orderPage">PlaceOrder</a>
+                    <a class="nav-link " href="#order" id="orderPage">PlaceOrder</a>
                 </div>
             </div>
         </div>
@@ -38,7 +39,7 @@
 <section id="home">
     <div>
         <h1 class="text-warning text-center">Udari POS System</h1>
-        <img src="/assest/img/background.jpg" class="img-fluid" alt="" >
+        <img src="/assest/img/background.jpg" class="img-fluid" alt="">
     </div>
 </section>
 <section id="customer">
@@ -80,17 +81,17 @@
                 <table class="table table-bordered border-primary">
                     <thead class="bg-white text-black">
                     <tr>
-                        <th >Customer ID</th>
-                        <th >Name</th>
-                        <th > Address</th>
-                        <th >Salary</th>
+                        <th>Customer ID</th>
+                        <th>Name</th>
+                        <th> Address</th>
+                        <th>Salary</th>
                     </tr>
-<!--                    <tr>-->
-<!--                        <th>C001</th>-->
-<!--                        <th>Nimal</th>-->
-<!--                        <th>Galle</th>-->
-<!--                        <th>30000</th>-->
-<!--                    </tr>-->
+                    <!--                    <tr>-->
+                    <!--                        <th>C001</th>-->
+                    <!--                        <th>Nimal</th>-->
+                    <!--                        <th>Galle</th>-->
+                    <!--                        <th>30000</th>-->
+                    <!--                    </tr>-->
                     </thead>
                     <tbody id="tblCustomer">
 
@@ -108,33 +109,33 @@
             <div class="col-12 col-lg-4">
                 <h2>Item Form</h2>
             </div>
-                <div class="form-group">
-                    <label for="txtCode">Code</label>
-                    <input class="form-control" id="txtCode" required type="text">
-                    <span class="control-error" id="lblcode"></span>
-                </div>
-                <div class="form-group">
-                    <label for="txtItemName"> Name</label>
-                    <input class="form-control" id="txtItemName" type="text">
-                    <span class="control-error" id="lblitemname"></span>
-                </div>
-                <div class="form-group">
-                    <label for="txtPrice">Price</label>
-                    <input class="form-control" id="txtPrice" type="text">
-                    <span class="control-error" id="lblprice"></span>
-                </div>
-                <div class="form-group">
-                    <label for="txtQty">Qty</label>
-                    <input class="form-control" id="txtQty" type="text">
-                    <span class="control-error" id="lblqty></span>
+            <div class="form-group">
+                <label for="txtCode">Code</label>
+                <input class="form-control" id="txtCode" required type="text">
+                <span class="control-error" id="lblcode"></span>
             </div>
-                 <div class="items" >
-                    <button class="btnItem btn-primary" id="btnItem">Save</button>
-                    <button class="btnItem btn-success" id="btnItemUpdate">Update</button>
-                    <button class="btnItem btn-danger" id="btnItemDelete">Delete</button>
-                </div>
+            <div class="form-group">
+                <label for="txtItemName"> Name</label>
+                <input class="form-control" id="txtItemName" type="text">
+                <span class="control-error" id="lblitemname"></span>
+            </div>
+            <div class="form-group">
+                <label for="txtPrice">Price</label>
+                <input class="form-control" id="txtPrice" type="text">
+                <span class="control-error" id="lblprice"></span>
+            </div>
+            <div class="form-group">
+                <label for="txtQty">Qty</label>
+                <input class="form-control" id="txtQty" type="text">
+                <span class="control-error" id="lblqty></span>
+            </div>
+                 <div class=" items" >
+                <button class="btnItem btn-primary" id="btnItem">Save</button>
+                <button class="btnItem btn-success" id="btnItemUpdate">Update</button>
+                <button class="btnItem btn-danger" id="btnItemDelete">Delete</button>
+            </div>
 
-                </div>
+            </div>
 
             </div>
             <div class="col-12 col-lg-8 mt-3">
@@ -341,40 +342,40 @@
 </section>
 <script src="js/jquery-3.7.0.min.js"></script>
 <script>
-    document.addEventListener("DOMContentLoaded",function () {
-        document.getElementById("home").style.display='inline-block';
-        document.getElementById("customer").style.display='none';
-        document.getElementById("item").style.display='none';
-        document.getElementById("order").style.display='none';
+    document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("home").style.display = 'inline-block';
+        document.getElementById("customer").style.display = 'none';
+        document.getElementById("item").style.display = 'none';
+        document.getElementById("order").style.display = 'none';
     });
 
-    document.getElementById("homepage").addEventListener('click',function () {
-        document.getElementById("home").style.display='inline-block';
-        document.getElementById("customer").style.display='none';
-        document.getElementById("item").style.display='none';
-        document.getElementById("order").style.display='none';
+    document.getElementById("homepage").addEventListener('click', function () {
+        document.getElementById("home").style.display = 'inline-block';
+        document.getElementById("customer").style.display = 'none';
+        document.getElementById("item").style.display = 'none';
+        document.getElementById("order").style.display = 'none';
     });
 
-    document.getElementById("customerPage").addEventListener('click',function () {
-        document.getElementById("home").style.display='none';
-        document.getElementById("customer").style.display='inline-block';
-        document.getElementById("item").style.display='none';
-        document.getElementById("order").style.display='none';
+    document.getElementById("customerPage").addEventListener('click', function () {
+        document.getElementById("home").style.display = 'none';
+        document.getElementById("customer").style.display = 'inline-block';
+        document.getElementById("item").style.display = 'none';
+        document.getElementById("order").style.display = 'none';
 
     });
 
-    document.getElementById("itemPage").addEventListener('click',function () {
-        document.getElementById("home").style.display='none';
-        document.getElementById("customer").style.display='none';
-        document.getElementById("item").style.display='inline-block';
-        document.getElementById("order").style.display='none';
+    document.getElementById("itemPage").addEventListener('click', function () {
+        document.getElementById("home").style.display = 'none';
+        document.getElementById("customer").style.display = 'none';
+        document.getElementById("item").style.display = 'inline-block';
+        document.getElementById("order").style.display = 'none';
 
     });
-    document.getElementById("orderPage").addEventListener('click',function () {
-        document.getElementById("home").style.display='none';
-        document.getElementById("customer").style.display='none';
-        document.getElementById("item").style.display='none';
-        document.getElementById("order").style.display='inline-block';
+    document.getElementById("orderPage").addEventListener('click', function () {
+        document.getElementById("home").style.display = 'none';
+        document.getElementById("customer").style.display = 'none';
+        document.getElementById("item").style.display = 'none';
+        document.getElementById("order").style.display = 'inline-block';
 
     });
     // document.getElementById("btnCustomer").addEventListener("click",function () {
@@ -401,83 +402,260 @@
     //     /*tBody.appendChild(tr);*/
     //     document.getElementById("tblCustomer").appendChild(tr);
     // });
-    var customerDB =[];
-    // $("#btnCustomer").click(function () {
-    //    let id = $("#txtCustomerID").val();
-    //     let name = $("#txtCustomerName").val();
-    //     let address = $("#txtCustomerAddress").val();
-    //     let salary =$("#txtCustomerSalary").val();
-    //     // console.log(id,name,address,salary);
-    //
-    //     var customerOb ={
-    //         id:this.id,
-    //         name:this.name,
-    //         address:this.address,
-    //         salary:this.salary
+    /*------------------------------------customer---------------------------------------------*/
+    var customerDB = [];
+    $("#btnCustomer").click(function () {
+        let id = $("#txtCustomerID").val();
+        let cusNmae=/^([A-Z])([a-z]{0,})$/;
+        let name = $("#txtCustomerName").val();
+        let address = $("#txtCustomerAddress").val();
+        let salary = $("#txtCustomerSalary").val();
+        // console.log(id,name,address,salary);
+
+        var customerOb = {
+            id: id,
+            name: name,
+            address: address,
+            salary: salary
+        }
+        customerDB.push(customerOb);
+        getAllCustomer();
+        trEvent();
+    });
+    function getAllCustomer() {
+            $("#tblCustomer").empty();
+            for (let i = 0; i < customerDB.length; i++) {
+                let id = customerDB[i].id;
+                let name = customerDB[i].name;
+                let address = customerDB[i].address;
+                let salary = customerDB[i].salary;
+                let row = `<tr>
+                     <td>${id}</td>
+                     <td>${name}</td>
+                     <td>${address}</td>
+                     <td>${salary}</td>
+                    </tr>`;
+
+                $("#tblCustomer").append(row);
+            }
+    }
+    // $("btnGetAll").click(function () {
+    //     for (var cus of customerDB) {
+    //         var row = `<tr><td>${cus.id}</td>
+    //                <td>${cus.name}</td>
+    //                <td>${cus.address}</td>
+    //                <td>${cus.salary}</td></tr>`
+    //         $("#tblCustomer").append(row);
     //     }
-    //     customerDB.push(customerOb);
+    //
+    //
+    // });
+    $("#btnGetAll").click(function () {
+        $("#tblCustomer").empty();
+        for (let i = 0; i < customerDB.length; i++) {
+            let id = customerDB[i].id;
+            let name = customerDB[i].name;
+            let address = customerDB[i].address;
+            let salary = customerDB[i].salary;
+            let row = `<tr>
+                     <td>${id}</td>
+                     <td>${name}</td>
+                     <td>${address}</td>
+                     <td>${salary}</td>
+                    </tr>`;
 
-        // let tr =$("<tr></tr>");
-        // let col1 =$("<td></td>").html(id);
-        // let col2 =$("<td></td>").html(name);
-        // let col3 =$("<td></td>").html(address);
-        // let col4 =$("<td></td>").html(salary);
-        // // col1.append(id);
-        // // col2.append(name);
-        // // col3.append(address);
-        // // col4.append(salary);
-        //
-        // tr.append(col1,col2,col3,col4);
-        //    $("#tblCustomer").append(tr);
-    //});
-    $("btnGetAll").click(function () {
-        for(let i=0; i<customerDB.length; i++) {
-            let id = customerDB[i][0];
-            let name = customerDB[i][1];
-            let address = customerDB[i][2];
-            let salary = customerDB[i][3];
+            $("#tblCustomer").append(row);
+        }
+    });
+    function trEvent() {
+        $("#tblCustomer>tr").on('click',function () {
+            let id = $(this).children(":eq(0)").text();
+            let name = $(this).children(":eq(1)").text();
+            let address = $(this).children(":eq(2)").text();
+            let salary = $(this).children(":eq(3)").text();
 
-            let tr =$("<tr></tr>");
-            let col1 =$("<td></td>").html(id);
-            let col2 =$("<td></td>").html(name);
-            let col3 =$("<td></td>").html(address);
-            let col4 =$("<td></td>").html(salary);
-            tr.append(col1,col2,col3,col4);
-            $("#tblCustomer").append(tr);
+            $("#txtCustomerID").val(id);
+            $("#txtCustomerName").val(name);
+            $("#txtCustomerAddress").val(address);
+            $("#txtCustomerSalary").val(salary);
+
+        });
+    }
+    $("#btnCusDelete").click(function (){
+        let id = $("#txtCustomerID").val();
+        let consent = confirm("Do you want to delete?")
+        if(consent){
+            let response =deleteCustomer(id);
+            if (response){
+                alert("Customer Deleted");
+                getAllCustomer();
+            }else{
+                alert("Customer Not Remove!...")
+            }
         }
 
 
     });
-    document.getElementById("btnItem").addEventListener("click",function () {
-        let code= document.getElementById("txtCode").value;
-        let name= document.getElementById("txtItemName").value;
-        let price=document.getElementById("txtPrice").value;
-        let qty = document.getElementById("txtQty").value;
-        console.log(code,name,price,qty)
-        // let tBody = document.getElementById("tblItem").value;
+    function deleteCustomer(id) {
+        for(let i=0; i<customerDB.length; i++){
+            if(customerDB[i].id==id){
+                customerDB.splice(i,1);
+                getAllCustomer();
+                return true;
+            }
+            return false;
+        }
 
+    }
+    $("#btnUpdate").click(function (){
+       let id = $("#txtCustomerID").val();
+       updateCustomer(id);
+    });
+    function updateCustomer(id){
+        if (searchCustomer(id)==undefined) {
+            alert("No such Customer..please check the ID");
+        }else{
+            let consent= confirm("Do you really want to update this customer.?");
+            if (consent) {
+                let customer= searchCustomer(id);
+                //if the customer available can we update.?
 
+                let customerName = $("#txtCustomerName").val();
+                let customerAddress = $("#txtCustomerAddress").val();
+                let customerSalary = $("#txtCustomerSalary").val();
 
-        let col1 =document.createElement("td");
-        let col2 =document.createElement("td");
-        let col3 =document.createElement("td");
-        let col4 =document.createElement("td");
+                customer.name=customerName;
+                customer.address=customerAddress;
+                customer.salary=customerSalary;
 
-        col1.append(code);
-        col2.append(name);
-        col3.append(price);
-        col4.append(qty);
+                getAllCustomer();
+            }
+        }
+        
+    }
+    function searchCustomer(id) {
+       return  customerDB.find(function (customer) {
+            return customer.id==id;
+        })
+    }
+    $("#txtCustomerID,#txtCustomerName,#txtCustomerAddress,#txtCustomerSalary").keydown(function (e) {
+       if(e.key=='Tab') {
+           e.preventDefault();
+       }
+    });
+    $("#txtCustomerID").keydown(function (e) {
+        let cusId =/^(C00-)[0-9]{3}$/;
+        let cId =$("#txtCustomerID").val();
+        if(e.key=="Enter"){
+            if(cusId.test(cId)) {
+                $("#txtCustomerID").css('border-color','green').blur();
+                $("#txtCustomerName").focus();
+            }else{
+                $("#txtCustomerID").css('border-color','red').blur();
+            }
+        }
+    });
+    $("#txtCustomerName").keydown(function (e) {
+        let cusName = /^([A-Z])([a-z]{10})$/;
+        let cName = $("#txtCustomerName").val();
+        if(e.key=="Enter"){
+            if (cusName.test(cName)) {
+                $("#txtCustomerName").css('border-color','green').blur();
+                $("#txtCustomerAddress").focus();
+            }else {
+                $("#txtCustomerName").css('border-color','red').blur();
+            }
+        }
+    });
+    $("#txtCustomerAddress").keydown(function (e) {
+        let cusAddress = /^([A-Z])([a-z]{0,})$/;
+        let cAddress = $("#txtCustomerAddress").val();
+        if(e.key=="Enter"){
+            if(cusAddress.test(cAddress)) {
+                $("#txtCustomerAddress").css('border-color','green').blur();
+                $("#txtCustomerSalary").focus();
+            }else {
+                $("#txtCustomerAddress").css('border-color','red').blur();
+            }
+        }
+    });
+    $("#txtCustomerSalary").keydown(function (e) {
+        let cusSalary=$("#txtCustomerSalary").val();
+        if(e.key=="Enter"){
+           //save customer
+        }
+    });
+    function checkValidation(){
+        for (let i=0; i<vArray.length; i++){
 
-        let tr =document.createElement("tr");
-        tr.appendChild(col1);
-        tr.appendChild(col2);
-        tr.appendChild(col3);
-        tr.appendChild(col4);
+        }
+    }
+    /*------------------------------------item---------------------------------------------*/
+    var itemDB = [];
+    $("#btnItem").click(function (){
+        let code = $("#txtCode").val();
+        let name = $("#txtItemName").val();
+        let price = $("#txtPrice").val();
+        let qty = $("#txtQty").val();
 
-        // tBody.appendChild(tr);
-        document.getElementById("tblItem").appendChild(tr);
+        var itemOb = {
+           code: code,
+            name: name,
+            price: price,
+            qty: qty
+        }
+       itemDB.push(itemOb);
+        itemGetAll();
+        trEvent();
+    });
+    function itemGetAll() {
+        $("#tblItem").empty();
+        for (let i = 0; i < itemDB.length; i++) {
+            let code = itemDB[i].code;
+            let name = itemDB[i].name;
+            let price = itemDB[i].price;
+            let qty = itemDB[i].qty;
+            let row = `<tr>
+                     <td>${code}</td>
+                     <td>${name}</td>
+                     <td>${price}</td>
+                     <td>${qty}</td>
+                    </tr>`;
+            $("#tblItem").append(row);
+        }
+    }
+    $("#btnItemGetAll").click(function () {
+        $("#tblItem").empty();
+        for (let i = 0; i < itemDB.length; i++) {
+            let code = itemDB[i].code;
+            let name = itemDB[i].name;
+            let price = itemDB[i].price;
+            let qty = itemDB[i].qty;
+            let row = `<tr>
+                     <td>${code}</td>
+                     <td>${name}</td>
+                     <td>${price}</td>
+                     <td>${qty}</td>
+                    </tr>`;
 
-    })
+            $("#tblItem").append(row);
+        }
+    });
+    function trEvent() {
+        $("#tblItem>tr").on('click',function () {
+            let code = $(this).children().eq(0).text();
+            let name = $(this).children().eq(1).text();
+            let price = $(this).children().eq(2).text();
+            let qty = $(this).children().eq(3).text();
+
+            $("#txtCode").val(code);
+            $("#txtItemName").val(name);
+            $("#txtPrice").val(price);
+            $("#txtQty").val(qty);
+
+        });
+
+    }
 </script>
 
 </body>
