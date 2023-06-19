@@ -654,7 +654,115 @@
             $("#txtQty").val(qty);
 
         });
+    }
+    $("#btnItemDelete").click(function (){
+        let code = $("#txtCode").val();
+        let consent = confirm("Do you want to delete?")
+        if(consent){
+            let response =deleteCustomer(code);
+            if (response){
+                alert("Item Deleted");
+               itemGetAll();
+            }else{
+                alert("Item Not Remove!...")
+            }
+        }
 
+
+    });
+    function deleteItem(code) {
+        for(let i=0; i<itemDB.length; i++){
+            if(itemDB[i].code==code){
+                itemDB.splice(i,1);
+                itemGetAll();
+                return true;
+            }
+            return false;
+        }
+
+    }
+    $("#btnItemUpdate").click(function (){
+        let code = $("#txtCode").val();
+        updateCustomer(code);
+    });
+    function updateItem(id){
+        if (searchItem(code)==undefined) {
+            alert("No such Item..please check the Code");
+        }else{
+            let consent= confirm("Do you really want to update this Item.?");
+            if (consent) {
+                let item= searchItem(code);
+                //if the customer available can we update.?
+
+                let itemName = $("#txtItemName").val();
+                let itemPrice = $("#txtPrice").val();
+                let itemQty = $("#txtQty").val();
+
+                item.name=itemName;
+                item.price=itemPrice;
+                item.qty=itemQty;
+
+                itemGetAll();
+            }
+        }
+
+    }
+    function searchItem(code) {
+        return  itemDB.find(function (item) {
+            return item.code==code;
+        })
+    }
+    $("#txtCode,#txtItemName,#txtPrice,#txtQty").keydown(function (e) {
+        if(e.key=='Tab') {
+            e.preventDefault();
+        }
+    });
+    $("#txtCode").keydown(function (e) {
+        let itemId =/^(I00-)[0-9]{3}$/;
+        let iId =$("#txtCode").val();
+        if(e.key=="Enter"){
+            if(itemId.test(iId)) {
+                $("#txtCode").css('border-color','green').blur();
+                $("#txtItemName").focus();
+            }else{
+                $("#txtCode").css('border-color','red').blur();
+            }
+        }
+    });
+    $("#txtItemName").keydown(function (e) {
+        let itemName = /^([A-Z])([a-z]{10})$/;
+        let iName = $("#txtItemName").val();
+        if(e.key=="Enter"){
+            if (itemName.test(iName)) {
+                $("#txtItemName").css('border-color','green').blur();
+                $("#txtPrice").focus();
+            }else {
+                $("#txtItemName").css('border-color','red').blur();
+            }
+        }
+    });
+    $("#txtPrice").keydown(function (e) {
+        let cusAddress = /^([A-Z])([a-z]{0,})$/;
+        let cAddress = $("#txtCustomerAddress").val();
+        if(e.key=="Enter"){
+            if(cusAddress.test(cAddress)) {
+                $("#txtCustomerAddress").css('border-color','green').blur();
+                $("#txtCustomerSalary").focus();
+            }else {
+                $("#txtCustomerAddress").css('border-color','red').blur();
+            }
+        }
+    });
+    $("#txtCustomerSalary").keydown(function (e) {
+        let cusSalary=$("#txtCustomerSalary").val();
+        if(e.key=="Enter"){
+            //save customer
+        }
+    });
+    function checkValidation(){
+        for (let i=0; i<vArray.length; i++){
+
+        }
     }
 </script>
 
