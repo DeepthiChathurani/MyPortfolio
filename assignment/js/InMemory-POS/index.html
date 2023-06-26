@@ -351,7 +351,32 @@
 <script src="controllers/CustomerController.js"></script>
 <script src="controllers/ItemController.js"></script>
 <script src="controllers/validations/CustomerValidation.js"></script>
-<script src="controllers/validations/ItemValidation.js"></script>
+<script>
+ $("#btnCusDelete").on('click',function () {
+     let cusId = $("#txtCustomerID").val();
+     let consent=confirm("Do You Want to delete?");
+     if(consent){
+         let response=deleteCustomer(cusId);
+         if (response){
+             alert("Customer Delete");
+             getAllCustomers();
+             clearCustomerInputFields();
+         }else {
+             alert("Customer Not remove");
+         }
+ }
+ });
 
+ function deleteCustomer(id) {
+for (let i=0;i<customerDB.length;i++){
+       if(customerDB[i].id==id){
+            customerDB.splice(i,1);
+getAllCustomers();
+            return true
+         }
+         return false;
+     }
+ };
+</script>
 </body>
 </html>

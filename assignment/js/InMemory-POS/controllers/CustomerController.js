@@ -34,24 +34,50 @@ function bindTrEvents() {
 }
 
 //delete btn event
-$("#btnCusDelete").click(function () {
-    let id = $("#txtCustomerID").val();
-
-    let consent = confirm("Do you want to delete.?");
-    if (consent) {
-        let response = deleteCustomer(id);
-        if (response) {
-            alert("Customer Deleted");
-            clearCustomerInputFields();
-            getAllCustomers();
-        } else {
-            alert("Customer Not Removed..!");
-        }
-    }
-
-
-});
-
+// $("#btnCusDelete").click(function () {
+//     let cusId = $("#txtCustomerID").val();
+//
+//     let consent = confirm("Do you want to delete.?");
+//     if (consent) {
+//         let response = deleteCustomer(cusId);
+//         if (response) {
+//             alert("Customer Deleted");
+//             clearCustomerInputFields();
+//             getAllCustomers();
+//         } else {
+//             alert("Customer Not Removed..!");
+//         }
+//     }
+//
+//
+// });
+// $("#btnCusDelete").on('click',function () {
+//     let cusId = $("#txtCustomerID").val();
+//     let consent=confirm("Do You Want to delete?");
+//     if(consent){
+//         let response=deleteCustomer(cusId);
+//         if (response){
+//             alert("Customer Delete");
+//             getAllCustomers();
+//             clearCustomerInputFields();
+//         }else {
+//             alert("Customer Not remove");
+//         }
+//
+//     }
+//
+// });
+//
+// function deleteCustomer(id) {
+//     for (let i=0;i<customerDB.length;i++){
+//         if(customerDB[i].id==id){
+//             customerDB.splice(i,1);
+//             getAllCustomers();
+//             return true
+//         }
+//         return false;
+//     }
+// };
 //update  btn event
 $("#btnUpdate").click(function () {
     let id = $("#txtCustomerID").val();
@@ -124,15 +150,15 @@ function getAllCustomers() {
     }
 }
 
-function deleteCustomer(id) {
-    for (let i = 0; i < customerDB.length; i++) {
-        if (customerDB[i].id == id) {
-            customerDB.splice(i, 1);
-            return true;
-        }
-    }
-    return false;
-}
+// function deleteCustomer(cusId) {
+//     for (let i = 0; i < customerDB.length; i++) {
+//         if (customerDB[i].id == cusId) {
+//             customerDB.splice(i, 1);
+//             return true;
+//         }
+//     }
+//     return false;
+// }
 
 function searchCustomer(id) {
     return customerDB.find(function (customer) {
