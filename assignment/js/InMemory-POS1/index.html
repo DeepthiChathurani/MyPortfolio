@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../../assest/js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="../../../assest/css/bootstrap.css">
+    <link rel="stylesheet" href="assest/CSS/PosStyle.css">
+
+
+</head>
+
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary w-100" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">POS System</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="nav justify-content-end" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="#home" id="homepage">Home</a>
+                    <a class="nav-link" href="#customer" id="customerpage">Customer</a>
+                    <a class="nav-link" href="#item" id="itemPage">Item</a>
+                    <a class="nav-link " href="#oders" id="Oderpage">Oders</a>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+</header>
+<section id="home">
+    <section class="row container-fluid m-auto   bg-body mt-0 border rounded" style="width:95vw ; height: 90vh">
+        <section id="home1pic" class=" col-4 rounded border shadow-lg p-3 mb-5  rounded "
+                 style="width:400px;height:90vh ;border: 1px saddlebrown">
+
+        </section>
+        <section class=" col-8">
+            <section id="home2pic"
+                     class="row m-5 mt-5 container text-center justify-content-center  border  shadow-lg p-3 mb-5  rounded"
+                     style="width:800px; height: 400px">
+                <div class="col-4 bg-light border rounded col " style="width:200px; height: 200px; margin-top:88px">
+                    <div class="col 12">
+                        <img src="/assignment/JS/SPA/assest/icons8-sale-paper-bag-100.png">
+                        <label for="exampleInputPassword1" class="form-label">Num Of Item:</label>
+                        <input type="number" class="form-control" id="exampleInputPassword1" value="10"
+                               style="font-size: 30px; font-weight:600;text-align: center">
+                    </div>
+                </div>
+                <div class="col-4 bg-light border rounded m-auto  col "
+                     style="width:200px; height: 200px;margin-top:100px">
+                    <div class="col 12">
+                        <img src="/assignment/JS/SPA/assest/icons8-shopping-cart-promotion-100.png">
+                        <label for="ex" class="form-label">Num Of Orders:</label>
+                        <input type="number" class="form-control" id="ex" value="20"
+                               style="font-size: 30px; font-weight:600;text-align: center">
+                    </div>
+                </div>
+                <div class="col-4 bg-light border rounded border col  "
+                     style="width:200px; height: 200px;margin-top:88px">
+                    <div class="col 12">
+                        <img src="/assignment/JS/SPA/assest/icons8-customer-100.png">
+                        <label for="yr" class="form-label">Num Of Customers:</label>
+                        <input type="number" class="form-control" id="yr" value="20"
+                               style="font-size: 30px; font-weight:600;text-align: center">
+                    </div>
+                </div>
+
+
+            </section>
+        </section>
+    </section>
+</section>
+<section id="customer">
+    <section class="row me-1 bg-light">
+        <p class="fs-2 text-center fw-semibold">Customer Form</p>
+        <section style="border: 1px solid black" class="col-4 p-3 mb-2 bg-primary-subtle text-emphasis-primary border
+    border-light-subtle rounded-3 shadow p-3 mb-5 bg-body-tertiary rounded w-25 m-auto mt-4 m">
+            <form class="row g-3" id="form1">
+                <div class="col-12">
+                    <label for="cid" class="form-label">Customer Id</label>
+                    <input type="text" class="form-control " id="cid">
+                    <span class="control-error" id="lblcusid" ></span>
+                </div>
+                <div class="col-12">
+                    <label for="Name" class="form-label">Customer Name</label>
+                    <input type="text" class="form-control " id="Name">
+                    <span class="control-error" id="lblcusname"></span>
+                </div>
+                <div class="col-12">
+                    <label for="CAdd" class="form-label">Customer Address</label>
+                    <input type="text" class="form-control " id="CAdd">
+                    <span class="control-error" id="lblcusaddress"></span>
+                </div>
+                <div class="col-12">
+                    <label for="slry" class="form-label">Customer Salary</label>
+                    <input type="number" class="form-control " id="slry">
+                    <span class="control-error" id="lblcussalary"></span>
+                </div>
+
+                <div class="col-12">
+                    <button id="addCustomer" type="button" class="btn btn-primary  m-auto ">Add</button>
+                    <button type="button" id="btnUpdateCustomer" class="btn btn-dark  m-auto ">Update</button>
+                    <button type="button" id="btndeleteCustomer" class="btn btn-danger  m-auto ">Delete</button>
+
+
+                </div>
+                <div id="notification"></div>
+
+            </form>
+        </section>
+        <section id="customerPic" class="col-7  me-4 ">
+
+            <table id="storelist"
+                   class="mt-4 table table-hover table-borderless table-striped text-center w-100  rounded-3">
+                <thead class="bg-primary">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Salary</th>
+                </tr>
+                </thead>
+                <tbody id="cusTableBody"></tbody>
+
+            </table>
+            <div class="row w-50">
+
+                <select id="cd" class="form-select w-25 mt-5 col-4 h-25 ">
+                    <option selected>Select Id</option>
+                    <option>...</option>
+                </select>
+                <button id="loadAll" type="button" class="m-2 w-50  col-6 btn btn-success justify-content-end mt-5 ">
+                    Load Detail
+                </button>
+            </div>
+        </section>
+
+    </section>
+
+</section>
+<section id="item">
+    <section class="row me-1 bg-light">
+        <p class="fs-2 text-center fw-semibold">Item Form</p>
+        <section style="border: 1px solid black" class="col-4 p-3 mb-2 bg-primary-subtle text-emphasis-primary border
+    border-light-subtle rounded-3 shadow p-3 mb-5 bg-body-tertiary rounded w-25 m-auto mt-4 m">
+            <form class="row g-3">
+                <div class="col-12">
+                    <label for="txtItemId" class="form-label">Item Code</label>
+                    <input type="text" class="form-control " id="txtItemId">
+                    <span class="control-error" id="lblItemId" ></span>
+
+                </div>
+                <div class="col-12">
+                    <label for="txtItemName" class="form-label">Item Name</label>
+                    <input type="text" class="form-control " id="txtItemName">
+                    <span class="control-error" id="lblItemName" ></span>
+
+                </div>
+                <div class="col-12">
+                    <label for="txtItemPrice" class="form-label">Item Price</label>
+                    <input type="number" class="form-control " id="txtItemPrice">
+                    <span class="control-error" id="lblItemPrice" ></span>
+
+                </div>
+                <div class="col-12">
+                    <label for="txtItemQty" class="form-label">Item Qty</label>
+                    <input type="number" class="form-control " id="txtItemQty">
+                    <span class="control-error" id="lblItemQty" ></span>
+
+                </div>
+
+                <div class="col-12">
+                    <button type="button" id="btnAddItem" class="btn btn-primary  m-auto ">Add</button>
+                    <button type="submit" id="btnUpdateItem" class="btn btn-dark  m-auto ">Update</button>
+                    <button type="submit" id="btnDeleteItem" class="btn btn-danger  m-auto ">Delete</button>
+
+
+                </div>
+            </form>
+        </section>
+        <section id="itemformpic" class="col-7  me-4 ">
+
+            <table id="storeList1"
+                   class="mt-4 table table-hover table-borderless table table-striped text-center w-100  rounded-3">
+                <thead class="bg-primary">
+                <tr >
+                    <th scope="col">Item Code</th>
+                    <th scope="col">Item Name</th>
+                    <th scope="col">Item Price</th>
+                    <th scope="col">Item Qty</th>
+                </tr>
+                </thead>
+                <tbody class="itemTbody" >
+
+                </tbody>
+            </table>
+            <div class="row w-50">
+
+                <select id="cd1" class="form-select w-25 mt-5 col-4 h-25 ">
+                    <option selected>Select Id</option>
+                    <option>...</option>
+                </select>
+                <button id="loadItem" type="button" class="m-2 w-50  col-6 btn btn-success justify-content-end mt-5 ">Load Detail
+                </button>
+            </div>
+        </section>
+
+    </section>
+</section>
+<section id="oders">
+    <section class="row" style="width: 90vw">
+        <section class="col-6"><p class="fs-2 text-center fw-semibold justify-content-start">Place Order Form</p>
+        </section>
+        <section class="col-6 ">
+            <a class="btn btn-outline-info mt-3 w-25 " style="margin-left: 500px;" href="#viewOders" id="viewOderform"
+               role="button">View Orders</a>
+        </section>
+    </section>
+    <section class="row me-3">
+
+
+        <section
+                class="col-7 p-3 mb-2 bg-primary-subtle text-emphasis-primary border border-light-subtle rounded-3 shadow p-3 mb-5 bg-body-tertiary rounded w-50 m-auto mt-4 m">
+            <form class="row g-3">
+                <div class="col-md-6">
+                    <label for="OderId" class="form-label">Oder Id</label>
+                    <input type="text" class="form-control" id="OderId">
+                </div>
+                <div class="col-md-6">
+                    <label for="OderDate" class="form-label">Oder Date</label>
+                    <input type="date" class="form-control" id="OderDate">
+                </div>
+                <div class="col-md-6">
+                    <label for="OderCusId" class="form-label">Customer Id</label>
+                    <select id="OderCusId" class="form-select">
+                        <option id="d1" selected>Select Customer Id</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="OderCusName" class="form-label">Customer Name</label>
+                    <input type="text" class="form-control" id="OderCusName">
+                </div>
+                <div class="col-md-6">
+                    <label for="OderItemCode" class="form-label">Code</label>
+                    <select id="OderItemCode" class="form-select">
+                        <option id="d" selected>Select Item Code</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="OderDec" class="form-label">Description</label>
+                    <input type="text" class="form-control" id="OderDec">
+                </div>
+                <div class="col-md-4">
+                    <label for="unitPrice" class="form-label">Unit price</label>
+                    <input type="number" class="form-control" id="unitPrice">
+                </div>
+                <div class="col-md-4">
+                    <label for="QtyOnHand" class="form-label">Qty. On Hand</label>
+                    <input type="number" class="form-control" id="QtyOnHand">
+                </div>
+                <div class="col-md-4">
+                    <label for="OderQty" class="form-label">Qty</label>
+                    <input type="number" class="form-control" id="OderQty">
+                    <span id="lblqty">Check qty influencity from cart button</span>
+
+                </div>
+
+                <div class="col-12">
+                    <button type="button" id="btnCart" class="btn btn-primary">Add to cart</button>
+                </div>
+            </form>
+        </section>
+        <section id="oderspic" class="col-5 mt-4 me-4 border border-primary rounded-3">
+
+            <div class="row px-lg-0 px-sm-5 px-xxl-3 mt-4">
+                <div class="col-5">
+                    <div class="mb-2 ">
+                        <label for="total" class="form-label fs-5">Total(RS)</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="mb-2">
+                        <input type="number" readonly class="form-control p-1 fs-6 fw-bolder " id="total">
+                    </div>
+                </div>
+
+                <div class="row px-lg-0 px-sm-5 px-xxl-4" style="margin-left: 1px">
+                    <div class="col-5" >
+                        <div class="mb-2">
+                            <label for="subTotal" class="form-label fs-5">Sub Total(RS)</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-2">
+                            <input type="number" readonly class="form-control p-1 fs-6 fw-bolder " id="subTotal">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row gx-3 mt-4">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="cash" class="form-label " style="font-size:18px;font-weight:600">Cash</label>
+                            <input type="number" class="form-control" id="cash" >
+                            <span class="control-error" id="lblCash" ></span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-3 mb-xxl-4">
+                            <label for="discount" class="form-label" style="font-size:18px;font-weight:600; color:firebrick">Discount</label>
+                            <input type="number" class="form-control" id="discount" >
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="mb-3 mb-xl-5 mb-xxl-4">
+                        <label for="balance" class="form-label"  style="font-size:18px;font-weight:600">Balance</label>
+                        <input type="text" class="form-control" id="balance">
+                    </div>
+                    <div class="mt-1 d-grid col-6 mt-xl-2 mx-auto">
+                        <button type="button" id="placeOder" class="btn btn-success">Purchase</button>
+                    </div>
+                </div>
+
+                <div>
+                </div>
+            </div>
+        </section>
+
+    </section>
+    <table class="table table-hover table-borderless table-striped text-center w-75 m-auto mt-5  rounded-3">
+        <thead class="bg-primary">
+        <tr>
+            <th scope="col">OderId</th>
+            <th scope="col">Code</th>
+            <th scope="col">Description</th>
+            <th scope="col">Qty</th>
+            <th scope="col">Unit Price</th>
+            <th scope="col">Total</th>
+        </tr>
+        </thead>
+        <tbody id="cartTBody">
+
+        </tbody>
+    </table>
+
+
+</section>
+<section id="viewOders">
+    <section>
+        <div class="container-fluid mt-4 ">
+            <form class="d-flex" role="search">
+                <select id="loadOderId" class="form-select w-25 ">
+                    <option selected>Select Order Id</option>
+                    <option>...</option>
+                </select>
+                <button class="btn btn-outline-success" id="OdIdSearch" type="button">Search</button>
+            </form>
+        </div>
+    </section>
+    <section class="row me-1 bg-light">
+        <p class="fs-2 text-center fw-semibold">Veiw Oder Form</p>
+        <section style="border: 1px solid black" class="col-4 p-3 mb-2 bg-primary-subtle text-emphasis-primary border
+    border-light-subtle rounded-3 shadow p-3 mb-5 bg-body-tertiary rounded w-25 m-auto mt-4 m">
+            <form class="row g-3">
+                <div class="col-12">
+                    <label for="id" class="form-label">Oder Id</label>
+                    <input type="text" class="form-control " id="id">
+                </div>
+                <div class="col-12">
+                    <label for="cname" class="form-label">Customer Name</label>
+                    <input type="text" class="form-control " id="cname">
+                </div>
+
+                <div class="col-12">
+                    <label for="dis" class="form-label">Discount</label>
+                    <input type="number" class="form-control " id="dis">
+                </div>
+                <div class="col-12">
+                    <label for="cost" class="form-label">Cost</label>
+                    <input type="number" class="form-control " id="cost">
+                </div>
+                <div class="col-12">
+                    <button type="button" id="btnclear" class="btn btn-dark  m-auto ">Clear</button>
+                    <button type="button" id="btndeleteOD" class="btn btn-danger  m-auto ">Delete</button>
+
+
+                </div>
+            </form>
+        </section>
+        <section id="oderspic2" class="col-7  me-4 ">
+
+            <table class="mt-4 table table-hover table-borderless table-striped text-center w-100 rounded-3">
+                <thead class="bg-primary">
+                <tr>
+                    <th scope="col">Order Id</th>
+                    <th scope="col">Customer Name</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Discount</th>
+                    <th scope="col">Cost</th>
+                </tr>
+                </thead>
+                <tbody id="ordersTBody">
+                </tbody>
+            </table>
+
+        </section>
+
+    </section>
+</section>
+<script src="assest/js/jquery-3.7.0.min.js"></script>
+<script src="controller/customerController.js"></script>
+<script src="controller/itemController.js"></script>
+<script src="db/DB.js"></script>
+<script src="model/customer.js"></script>
+<script src="model/placeOder.js"></script>
+<script src="utill/notification.js"></script>
+<script src="model/cart.js"></script>
+
+<script src="controller/validation/customerFormValidation.js"></script>
+<script src="controller/validation/itemFormValidation.js"></script>
+<script src="controller/placeOderController.js"></script>
+<script src="controller/viewOrderController.js"></script>
+<script src="model/item.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("home").style.display = 'inline-block';
+        document.getElementById("customer").style.display = 'none';
+        document.getElementById("item").style.display = 'none';
+        document.getElementById("oders").style.display = 'none';
+        document.getElementById("viewOders").style.display = 'none';
+
+    });
+
+
+    document.getElementById("homepage").addEventListener('click', function () {
+        document.getElementById("home").style.display = 'inline-block';
+        document.getElementById("customer").style.display = 'none';
+        document.getElementById("item").style.display = 'none';
+        document.getElementById("oders").style.display = 'none';
+        document.getElementById("viewOders").style.display = 'none';
+
+    });
+
+    document.getElementById("customerpage").addEventListener('click', function () {
+        document.getElementById("home").style.display = 'none';
+        document.getElementById("customer").style.display = 'inline-block';
+        document.getElementById("item").style.display = 'none';
+        document.getElementById("oders").style.display = 'none';
+        document.getElementById("viewOders").style.display = 'none';
+
+    });
+
+    document.getElementById("itemPage").addEventListener('click', function () {
+        document.getElementById("home").style.display = 'none';
+        document.getElementById("customer").style.display = 'none';
+        document.getElementById("item").style.display = 'inline-block';
+        document.getElementById("oders").style.display = 'none';
+        document.getElementById("viewOders").style.display = 'none';
+
+    });
+    document.getElementById("Oderpage").addEventListener('click', function () {
+        document.getElementById("home").style.display = 'none';
+        document.getElementById("customer").style.display = 'none';
+        document.getElementById("item").style.display = 'none';
+        document.getElementById("oders").style.display = 'inline-block';
+        document.getElementById("viewOders").style.display = 'none';
+
+    });
+    document.getElementById("viewOderform").addEventListener('click', function () {
+        document.getElementById("home").style.display = 'none';
+        document.getElementById("customer").style.display = 'none';
+        document.getElementById("item").style.display = 'none';
+        document.getElementById("oders").style.display = 'none';
+        document.getElementById("viewOders").style.display = 'inline-block';
+
+    });
+
+  /*  $("#OderItemCode").on('click',function () {
+        $("#OderItemCode").empty();
+        for (let item of itemDb){
+            let id=`<option>${item.itemId}</option>`;
+            $("#OderItemCode").append(id);
+        }
+    });
+*/
+
+
+
+</script>
+</body>
+</html>

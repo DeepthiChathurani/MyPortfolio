@@ -27,7 +27,28 @@
             overflow-x: hidden;
             background-color: #3c2f5f;
         }
-
+        #loader {
+            transition: opacity 1s;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: #000000;
+        }
+        #loader>div {
+            width: 290px;
+            height: 290px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            background: url("assest/img/1amw.gif");
+            background-size: cover;
+            background-position: center;
+        }
         header {
             background: #3c2f5f;
             border: 1px solid black;
@@ -3028,7 +3049,7 @@
                 top: 0;
                 color: white;
                 margin-left: 170px;
-                margin-right: 180px;
+                margin-right: 420px;
                 margin-top: 130px;
             }
 
@@ -3057,8 +3078,8 @@
                 height: 40px;
                 border-radius: 6px;
                 margin-left: 170px;
-                margin-right: 250px;
-                margin-top: 260px;
+                margin-right: 500px;
+                margin-top: 380px;
                 background-color: #0ecfe8;
                 box-shadow: white;
                 text-align: center;
@@ -3541,7 +3562,7 @@
                 /*padding-top: 15px;*/
                 text-decoration: none;
                 color: white;
-                font-size: 20px;
+                font-size: 30px;
                 margin-right: -5px;
                 text-space: 5px;
             }
@@ -3590,7 +3611,7 @@
                 position: relative;
                 display: inline;
                 height: 60%;
-                width: 40%;
+                width: 50%;
                 margin-left: 20px;
                 border-radius: 10px;
                 transition: 2s;
@@ -3602,20 +3623,20 @@
                 top: 0;
                 color: white;
                 margin-left: 170px;
-                margin-right: 220px;
+                margin-right: 50px;
                 margin-top: 130px;
             }
 
             .home-content > h2 {
-                font-size: 20px;
+                font-size: 28px;
             }
 
             .home-content > h1 {
-                font-size: 21px;
+                font-size: 29px;
             }
 
             .home-content > h3 {
-                font-size: 16px;
+                font-size: 22px;
             }
 
             .home-content > h1 > samp {
@@ -3627,18 +3648,18 @@
                 right: 0;
                 top: 0;
                 display: inline-block;
-                width: 180px;
-                height: 40px;
+                width: 300px;
+                height: 50px;
                 border-radius: 6px;
                 margin-left: 170px;
                 margin-right: 250px;
-                margin-top: 260px;
+                margin-top: 360px;
                 background-color: #0ecfe8;
                 box-shadow: white;
                 text-align: center;
                 color: blue;
                 transition: 0.5s ease;
-                font-size: 21px;
+                font-size: 28px;
             }
 
             .btn :hover {
@@ -3646,13 +3667,13 @@
                 color: cyan;
             }
             #home > aside > div>img{
-                width: 50px;
+                width: 80px;
             }
             #home > aside > div:nth-child(1) {
                 position: absolute;
                 right: 0;
                 top: 0;
-                margin-top: 350px;
+                margin-top: 480px;
                 margin-right: 400px;
             }
 
@@ -3660,7 +3681,7 @@
                 position: absolute;
                 right: 0;
                 top: 0;
-                margin-top: 350px;
+                margin-top: 480px;
                 margin-right: 300px;
                 size: 30px;
             }
@@ -3669,22 +3690,22 @@
                 position: absolute;
                 right: 0;
                 top: 0;
-                margin-top: 350px;
+                margin-top: 480px;
                 margin-right: 210px;
 
             }
 
             #aboutme{
                 position: relative;
-                width: 1024px;
-                height: 300px;
+                width: 1440px;
+                height: 350px;
                 margin-top: 10px;
                 margin-bottom: 10px;
             }
             #aboutme> article > h2 {
                 margin-left: 20px;
                 margin-top: 10px;
-                font-size: 25px;
+                font-size: 45px;
                 color: whitesmoke;
                 text-align: left;
                 text-transform: uppercase;
@@ -3696,11 +3717,11 @@
             #aboutme> div > p {
                 margin-left: 35px;
                 margin-top: 50px;
-                font-size: 20px;
+                font-size: 28px;
                 color: white;
             }
             #aboutme> .image > img {
-                width: 35%;
+                width: 40%;
                 height: 60%;
                 position: absolute;
                 right: 0;
@@ -3723,17 +3744,17 @@
 
             #education {
                 position: relative;
-                width: 1024px;
-                height: 150px;
+                width: 1440px;
+                height: 250px;
                 margin-bottom: 5px;
                 color: whitesmoke;
-                font-size: 20px;
+                font-size: 45px;
                 margin-top: -50px;
             }
             #education> article > h2 {
                 margin-left: 20px;
                 margin-top: 10px;
-                font-size: 25px;
+                font-size: 45px;
                 color: whitesmoke;
                 text-align: left;
                 text-transform: uppercase;
@@ -3744,7 +3765,7 @@
             #education> div {
                 color: whitesmoke;
                 margin-top: 5px;
-                font-size: 18px;
+                font-size: 23px;
             }
             #education> div:nth-child(1) > p {
                 position: absolute;
@@ -3766,18 +3787,18 @@
             }
 
             #skills{
-                width: 1024px;
+                width: 1440px;
                 height: 500px;
                 margin-left: 20px;
                 margin-top: 10px;
-                font-size: 25px;
+                font-size: 45px;
                 color: whitesmoke;
                 text-align: left;
             }
             #skills> article > h2 {
                 margin-left: 20px;
                 margin-top: 10px;
-                font-size: 25px;
+                font-size: 45px;
                 color: whitesmoke;
                 text-align: left;
                 text-transform: uppercase;
@@ -3787,7 +3808,7 @@
             }
             #skills> div {
                 margin-top: 10px;
-                font-size: 15px;
+                font-size: 20px;
                 margin-left: 20px;
             }
             #skills> div:nth-child(1) > p {
@@ -3838,8 +3859,8 @@
 
             #projects {
                 position: relative;
-                width: 1024px;
-                height: 300px;
+                width: 1440px;
+                height: 400px;
                 margin-bottom: 10px;
                 color: whitesmoke;
                 font-size: 25px;
@@ -3848,7 +3869,7 @@
             #projects> article > h2 {
                 margin-left: 20px;
                 margin-top: 10px;
-                font-size: 22px;
+                font-size: 45px;
                 color: whitesmoke;
                 text-align: left;
                 text-transform: uppercase;
@@ -3862,7 +3883,7 @@
                 margin-left: 20px;
             }
             #projects>.p-1>div>article>h4{
-                font-size: 17px;
+                font-size: 20px;
                 color: #f2ff4f;
                 margin-left: 10px;
             }
@@ -3872,7 +3893,7 @@
             }
             #projects>.p-1>div>a{
                 color: white;
-                font-size: 12px;
+                font-size: 15px;
             }
             #projects>.p-2>div{
                 position: absolute;
@@ -3881,7 +3902,7 @@
                 top: 10px;
             }
             #projects>.p-2>div>article>h4{
-                font-size: 17px;
+                font-size: 20px;
                 color: #f2ff4f;
                 margin-left: 35px;
             }
@@ -3891,13 +3912,13 @@
             }
             #projects>.p-2>div>a{
                 color: white;
-                font-size: 12px;
+                font-size: 15px;
             }
 
             #activities{
                 position: relative;
-                width:1024px;
-                height: 500px;
+                width:1440px;
+                height: 600px;
                 margin-bottom: 10px;
                 color: whitesmoke;
                 font-size: 25px;
@@ -3906,7 +3927,7 @@
             #activities> article > h2 {
                 margin-left: 20px;
                 margin-top: 10px;
-                font-size: 25px;
+                font-size: 45px;
                 color: whitesmoke;
                 text-align: left;
                 text-transform: uppercase;
@@ -3916,88 +3937,88 @@
             }
             #activities>.css{
                 display: flex;
-                column-gap: 10px;
+                column-gap: 15px;
             }
             #activities>.css>div{
                 margin-top: 38px;
             }
             #activities>.css>div>img{
-                width: 100px;
+                width: 150px;
             }
             #activities>.css>h3{
                 margin-top: 10px;
                 color: #83a2ff;
-                font-size: 18px;
+                font-size: 25px;
                 margin-left: 30px;
             }
             #activities>.css>div>h4{
                 color: #e8ff43;
-                font-size: 10px;
+                font-size: 21px;
             }
             #activities>.transitions{
                 display: flex;
-                column-gap:10px;
+                column-gap:15px;
             }
             #activities>.transitions>h3{
                 margin-top: 10px;
                 color: #83a2ff;
-                font-size: 18px;
+                font-size: 25px;
                 margin-left: 30px;
             }
             #activities>.transitions>div{
                 margin-top: 38px;
             }
             #activities>.transitions>div>img{
-                width: 100px;
+                width: 150px;
             }
             #activities>.transitions>div>h4{
                 color: #e8ff43;
-                font-size: 10px;
+                font-size: 21px;
             }
 
             #activities>.framework{
                 display: flex;
-                column-gap: 10px;
+                column-gap: 15px;
             }
             #activities>.framework>h3{
                 margin-top: 10px;
                 color: #83a2ff;
-                font-size: 18px;
+                font-size: 25px;
                 margin-left: 30px;
             }
             #activities>.framework>div{
                 margin-top: 38px;
             }
             #activities>.framework>div>img{
-                width: 100px;
+                width: 150px;
             }
             #activities>.framework>div>h4{
                 color: #e8ff43;
-                font-size: 10px;
+                font-size: 21px;
             }
             #activities>.js{
                 display: flex;
-                column-gap: 10px;
+                column-gap: 15px;
             }
             #activities>.js>h3{
                 margin-top: 10px;
                 color: #83a2ff;
-                font-size: 18px;
+                font-size: 25px;
                 margin-left: 30px;
             }
             #activities>.js>div{
                 margin-top: 38px;
             }
             #activities>.js>div>img{
-                width: 100px;
+                width: 150px;
             }
             #activities>.js>div>h4{
                 color: #e8ff43;
-                font-size: 10px;
+                font-size: 21px;
             }
             #contact{
                 position: relative;
-                width: 1024px;
+                width: 1440px;
                 height: 600px;
                 margin-bottom: 10px;
                 color: whitesmoke;
@@ -4007,7 +4028,7 @@
             #contact > article > h2 {
                 margin-left: 20px;
                 margin-top: 10px;
-                font-size: 25px;
+                font-size: 45px;
                 color: whitesmoke;
                 text-align: left;
                 text-transform: uppercase;
@@ -4017,13 +4038,13 @@
             }
             #contact > nav > ul {
                 margin-top: 20px;
-                margin-left: 30px;
+                margin-left: 100px;
             }
             #contact>nav>ul>li{
-                font-size: 20px;
+                font-size: 25px;
             }
             #contact>nav>ul>li>img{
-                width: 80px;
+                width: 90px;
             }
             #contact>nav>ul>li:nth-child(1){
                 position: absolute;
@@ -4077,6 +4098,9 @@
 
 </head>
 <body>
+<div id="loader">
+    <div></div>
+</div>
 <header >
     <h2><samp>D</samp>eepthi</h2>
     <nav class="navBar">
@@ -4522,8 +4546,15 @@
             count = 0;
         }
     }
-</script>
 
+</script>
+<script>
+    let loader = document.getElementById("loader");
+    window.addEventListener("load", function () {
+        console.log("This message will print just after fully loading the website")
+        loader.style.display = 'none';
+    });
+</script>
 
 </body>
 </html>
